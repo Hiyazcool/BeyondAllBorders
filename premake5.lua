@@ -43,7 +43,9 @@ workspace "BeyondAllBorders"
 			systemversion "latest"
 			defines {
 				"CATALYST_WINDOWS_PLATFORM",
-				"CATALYST_BUILD_DLL"
+				"CATALYST_BUILD_DLL",
+				"_CRT_SECURE_NO_WARNINGS",
+				"GLFW_INCLUDE_NONE"
 			}
 			postbuildcommands {
 				("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputDirectory .. "/BeyondAllBorders"),
@@ -70,8 +72,8 @@ workspace "BeyondAllBorders"
 		pchsource "Auxilium/source/axpch.cpp"
 
 		files {
-			"%{prj.name}/source/Auxilium/**.h",
-			"%{prj.name}/source/Auxilium/**.cpp",
+			"%{prj.name}/source/**.h",
+			"%{prj.name}/source/**.cpp",
 			"%{IncludeDir.GLFW}"
 		}
 		includedirs {
@@ -81,6 +83,7 @@ workspace "BeyondAllBorders"
 			"%{prj.name}/source/Auxilium/",
 			"%{prj.name}/source/",
 			"%{IncludeDir.GLFW}",
+			"%{prj.name}",
 			"Catalyst/source/"
 		}
 		links {
