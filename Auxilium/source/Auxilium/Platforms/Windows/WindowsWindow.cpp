@@ -12,33 +12,31 @@ namespace Auxilium {
 
 	static uint8_t GLFWWindowCount = 0;
 
-	static void GLFWErrorCallback(int error, const char* description)
-	{
+	Window* Window::Create(const WindowProps& props) {
+		return new WindowsWindow(props);
+	}
+
+	static void GLFWErrorCallback(int error, const char* description) {
 		LOG_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
-	WindowsWindow::WindowsWindow(const WindowProps& props)
-	{
+	WindowsWindow::WindowsWindow(const WindowProps& props) {
 
 		Init(props);
 	}
 
-	WindowsWindow::~WindowsWindow()
-	{
+	WindowsWindow::~WindowsWindow() {
 		Shutdown();
 	}
 
-	void WindowsWindow::Init(const WindowProps& props)
-	{
+	void WindowsWindow::Init(const WindowProps& props) {
 		data.Title = props.Title;
 		data.Width = props.Width;
 		data.Height = props.Height;
 
 		LOG_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
-		if (GLFWWindowCount == 0)
-		{
-			//HZ_PROFILE_SCOPE("glfwInit");
+		if (GLFWWindowCount == 0) {
 			int success = glfwInit();
 			//ASSERT(success, "Could not initialize GLFW!");
 			
@@ -50,26 +48,22 @@ namespace Auxilium {
 		glfwSetWindowUserPointer(window, &data);
 		SetVSync(true);
 	}
-	void WindowsWindow::Shutdown()
-	{
+	void WindowsWindow::Shutdown() {
 		
 
 		glfwDestroyWindow(window);
 		--GLFWWindowCount;
 
-		if (GLFWWindowCount == 0)
-		{
+		if (GLFWWindowCount == 0) {
 			glfwTerminate();
 		}
 	}
 
-	void WindowsWindow::OnUpdate()
-	{
+	void WindowsWindow::OnUpdate() {
 
 	}
 
-	void WindowsWindow::SetVSync(bool enabled)
-	{
+	void WindowsWindow::SetVSync(bool enabled) {
 
 		if (enabled)
 			glfwSwapInterval(1);
@@ -79,8 +73,7 @@ namespace Auxilium {
 		data.VSync = enabled;
 	}
 
-	bool WindowsWindow::IsVSync() const
-	{
+	bool WindowsWindow::IsVSync() const {
 		return data.VSync;
 	}
 

@@ -4,7 +4,7 @@
 #include "Caller/Caller.h"
 #include "Window.h"
 namespace Auxilium {
-	class AXLM_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -12,10 +12,10 @@ namespace Auxilium {
 		virtual void Run();
 		void OnCall(Caller& call);
 
+		Application* CreateApplication();
 	private:
 		std::unique_ptr<Window> window;
 		bool isRunning = true;
-		Application* CreateApplication();
 	};
 }
 

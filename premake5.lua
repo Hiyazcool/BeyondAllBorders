@@ -83,7 +83,6 @@ workspace "BeyondAllBorders"
 			"%{prj.name}/source/Auxilium/",
 			"%{prj.name}/source/",
 			"%{IncludeDir.GLFW}",
-			"%{prj.name}",
 			"Catalyst/source/"
 		}
 		links {

@@ -4,7 +4,7 @@
 #include "Window.h"
 #include <GLFW/glfw3.h>
 namespace Auxilium {
-	class WindowsWindow : Window {
+	class WindowsWindow : public Window {
 	public:
 		WindowsWindow(const WindowProps& props);
 		virtual ~WindowsWindow();
