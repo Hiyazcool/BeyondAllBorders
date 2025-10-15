@@ -1,0 +1,6 @@
+[submodule "BeyondAllBorders/Auxilium/thirdParty/GLFW"]
+	path = BeyondAllBorders/Auxilium/thirdParty/GLFW
+	url = https://github.com/TheCherno/glfw.git
+[submodule "Auxilium/thirdParty/GLFW"]
+	path = Auxilium/thirdParty/GLFW
+	url = https://github.com/TheCherno/glfw.git
