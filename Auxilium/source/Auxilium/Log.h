@@ -1,17 +1,15 @@
 #pragma once
 #include "Define.h"
 #include <spdlog/spdlog.h>
-#include <format>
-#include <iostream>
-#include <set>
 #include "axpch.h"
-
+// I know not all includes are necessary
 namespace Auxilium {
 	class Logger {
 	public:
-		static std::shared_ptr<spdlog::logger> mlogger;	
 		static void Initialize();
-		inline static std::shared_ptr<spdlog::logger>& GetLogger() { return mlogger; }
+		static std::shared_ptr<spdlog::logger>& GetLogger() { return mlogger; }
+	private:
+		static std::shared_ptr<spdlog::logger> mlogger;	
 	};
 
 }

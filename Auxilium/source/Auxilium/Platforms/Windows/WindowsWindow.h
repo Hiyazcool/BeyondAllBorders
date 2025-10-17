@@ -3,6 +3,7 @@
 #include "Define.h"
 #include "Window.h"
 #include <GLFW/glfw3.h>
+#include "Log.h"
 namespace Auxilium {
 	class WindowsWindow : public Window {
 	public:

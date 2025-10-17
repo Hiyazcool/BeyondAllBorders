@@ -13,14 +13,13 @@ namespace Auxilium {
 
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 
-		Logger::mlogger = std::make_shared<spdlog::logger>("AUXILIUM", begin(logSinks), end(logSinks));
+		mlogger = std::make_shared<spdlog::logger>("AUXILIUM", begin(logSinks), end(logSinks));
 
 		spdlog::register_logger(mlogger);
 
 		Logger::mlogger = spdlog::stdout_color_mt("AXLM");
 		Logger::mlogger->set_level(spdlog::level::trace);
 		Logger::mlogger->flush_on(spdlog::level::trace);
-		mlogger->error("Test");
-		mlogger->error("Test2");
+		LOG_INFO("Logger Initialized");
 	}
 }

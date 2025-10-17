@@ -33,12 +33,10 @@ namespace Auxilium {
 		data.Title = props.Title;
 		data.Width = props.Width;
 		data.Height = props.Height;
-
-		LOG_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		LOG_CRIT("Creating window {0} ({1}, {2})", data.Title, data.Width, data.Height);
 
 		if (GLFWWindowCount == 0) {
 			int success = glfwInit();
-			//ASSERT(success, "Could not initialize GLFW!");
 			
 			glfwSetErrorCallback(GLFWErrorCallback);
 			GLFWWindowCount++;
