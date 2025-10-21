@@ -1,8 +1,5 @@
-
-// Single-file header: include/ecs/ECS.hpp
-// Minimal archetype-based ECS with cross-archetype queries.
-// Requires C++17 (or later).
-
+#include "axpch.h"
+#include"Define.h"
 #pragma once
 
 #include <bitset>

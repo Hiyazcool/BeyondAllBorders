@@ -1,6 +1,6 @@
 #pragma once 
 #include "Auxilium.h"
-#include "EntityComponentSystem.h"
+#include "Auxilium/ECS/Archetype.h"
 using namespace ecs;
 class BeyondAllBordersApplication : public Auxilium::Application
 {
@@ -17,7 +17,7 @@ public:
 	}
 	void Run() override {
 		std::cin.get();
-	}
+    }
 
 };
 Auxilium::Application* Auxilium::CreateApplication() {
