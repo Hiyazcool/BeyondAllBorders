@@ -7,7 +7,7 @@ namespace Auxilium {
 		std::string Title;
 		uint Width;
 		uint Height;
-		WindowProps(const std::string& title = "Auxilium Engine", uint width = 1920, uint height = 720) :
+		WindowProps(const std::string& title = "Auxilium Engine", uint width = 1920, uint height = 1080) :
 			Title(title),
 			Width(width),
 			Height(height) {

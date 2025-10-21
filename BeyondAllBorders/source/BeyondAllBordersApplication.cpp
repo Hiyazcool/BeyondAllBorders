@@ -1,19 +1,22 @@
 #pragma once 
 #include "Auxilium.h"
-
+#include "EntityComponentSystem.h"
+using namespace ecs;
 class BeyondAllBordersApplication : public Auxilium::Application
 {
 
+	// Example components
+	struct Position { float x, y, z; };
+	struct Velocity { float vx, vy, vz; };
+	struct Mesh { int meshId; };
+
 public:
 	BeyondAllBordersApplication() {
-		LOG_DEBUG("Creating Application");
 	}
 	~BeyondAllBordersApplication() {
 	}
 	void Run() override {
-		//LOG_INFO("Running");
 		std::cin.get();
-
 	}
 
 };

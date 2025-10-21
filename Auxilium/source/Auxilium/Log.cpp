@@ -6,6 +6,9 @@ namespace Auxilium {
 	std::shared_ptr<spdlog::logger> Logger::mlogger;
 
 	void Logger::Initialize() {
+		if (mlogger != nullptr) {
+			LOG_DEBUG("Log already Initialized");
+		}
 		std::vector<spdlog::sink_ptr> logSinks;
 
 		logSinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
