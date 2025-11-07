@@ -7,7 +7,7 @@
 		Auxilium::Logger::Initialize();
 		LOG_INFO("Creating Application");
 		auto application = Auxilium::CreateApplication();
-		LOG_INFO("Running Application");
+		LOG_INFO("Running Application");		
 		application->Run();
 		delete application;
 	}

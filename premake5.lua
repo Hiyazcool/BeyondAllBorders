@@ -16,8 +16,12 @@ workspace "BeyondAllBorders"
 
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Auxilium/thirdParty/GLFW/include"
+	IncludeDir["Glad"] = "Auxilium/thirdParty/Glad/include"
+	IncludeDir["ImGUI"] = "Auxilium/thirdParty/imgui"
 
 	include "Auxilium/thirdParty/GLFW"
+	include "Auxilium/thirdParty/Glad"
+	include "Auxilium/thirdParty/imgui"
 
 	project "Catalyst"
 		location "Catalyst"
@@ -74,7 +78,8 @@ workspace "BeyondAllBorders"
 		files {
 			"%{prj.name}/source/**.h",
 			"%{prj.name}/source/**.cpp",
-			"%{IncludeDir.GLFW}"
+			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.Glad}"
 		}
 		includedirs {
 			"%{prj.name}/thirdParty/spdlog/include",
@@ -83,18 +88,22 @@ workspace "BeyondAllBorders"
 			"%{prj.name}/source/Auxilium/",
 			"%{prj.name}/source/",
 			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.Glad}",
+			"%{IncludeDir.ImGUI}",
 			"Catalyst/source/"
 		}
 		links {
 			"Catalyst",
 			"GLFW",
+			"Glad",
+			"ImGUI",
 			"opengl32.lib"
 		}
 		filter "system:windows"
 			cppdialect "c++20"
 			staticruntime "On"
 			systemversion "latest"
-
+			buildoptions "/MDd"
 			defines {
 				"AXLM_WINDOWS_PLATFORM",
 				"AXLM_BUILD_DLL",

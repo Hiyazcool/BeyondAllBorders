@@ -16,7 +16,7 @@ namespace Auxilium {
 		unsigned int GetHeight() const override { return data.Height; }
 
 		// Window attributes
-		void SetCallback(const CallbackFn& callback) override { data.EventCallback = callback; }
+		void SetCallback(const CallbackFn& callback) override { data.Callback = callback; }
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 
@@ -34,7 +34,7 @@ namespace Auxilium {
 			unsigned int Width, Height;
 			bool VSync;
 
-			CallbackFn EventCallback;
+			CallbackFn Callback;
 		};
 
 		WindowData data;

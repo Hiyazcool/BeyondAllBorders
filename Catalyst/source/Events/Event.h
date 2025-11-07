@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "EventParams.h"
-#include "List.h"
+#include "Structures/List.h"
 //#define EVENT_DEBUG
 namespace Auxilium {
 	class CATALYST_API Event {

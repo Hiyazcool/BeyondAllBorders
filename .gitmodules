@@ -4,3 +4,6 @@
 [submodule "Auxilium/thirdParty/GLFW"]
 	path = Auxilium/thirdParty/GLFW
 	url = https://github.com/TheCherno/glfw.git
+[submodule "Auxilium/thirdParty/imgui"]
+	path = Auxilium/thirdParty/imgui
+	url = https://github.com/TheCherno/imgui
